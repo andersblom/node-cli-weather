@@ -27,7 +27,21 @@ function getWeather(input) {
             let lat = parsedData.results[0].geometry.location.lat;
             let long = parsedData.results[0].geometry.location.lng;
             
-            
+            // Init darksky weather fetch
+            https.get(`https://api.darksky.net/forecast/558592e8030e3dc0e74aca942f611848/${lat},${long}`, (response) => {
+                let weatherData = "";
+                response.on("data", (dataChunk) => {
+                    weatherData += dataChunk;
+                });
+                response.on("end", () => {
+                    let parsedWeather = JSON.parse(weatherData);
+                    console.log(`So, you wan't the weather for ${requestInput}, huh?`);
+                    console.log("Well, knock yourself out:");
+                    console.log("\n");
+                    console.log(`It's currently: ${parsedWeather.currently.summary}`);
+                    console.log(`And how cold?: ${parsedWeather.currently.temperature} F.`);
+                });
+            });
         });
     });
 }
