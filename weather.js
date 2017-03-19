@@ -11,7 +11,25 @@ const https = require("https");
 const requestInput = process.argv.slice(2).join(" ");
 
 function getWeather(input) {
+    let data = "";
     
+    // Converting input city to lat/long for darksky API
+    https.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${input}&key=AIzaSyAWZrNTLzW03gIatwIk-2DpFMnckiYvcLU`, (response) => {
+        response.on("data", (dataChunk) => {
+            data += dataChunk;
+        });
+
+        // Request done
+        response.on("end", () => {
+            let parsedData = JSON.parse(data);
+
+            // Variables for next request
+            let lat = parsedData.results[0].geometry.location.lat;
+            let long = parsedData.results[0].geometry.location.lng;
+            
+            
+        });
+    });
 }
 
 
