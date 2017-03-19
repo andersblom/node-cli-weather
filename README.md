@@ -2,7 +2,7 @@
 
 Because why look out the window, when you can keep staring into your console?
 
-## Get started: 
+## Getting started: 
 ```
 node weather.js <your city here>
 ```
