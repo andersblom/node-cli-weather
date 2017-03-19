@@ -1,2 +1,2 @@
 # node-cli-weather
-NodeJS CLI weather
+Powered by Dark Sky (https://darksky.net)
