@@ -28,13 +28,14 @@ function getWeather(input) {
                 response.on("data", (dataChunk) => {
                     weatherData += dataChunk;
                 });
+                // Time to display some weather. Yeah buddy!
                 response.on("end", () => {
                     let parsedWeather = JSON.parse(weatherData);
                     console.log(`So, you wan't the weather for ${requestInput}, huh?`);
                     console.log("Well, knock yourself out:");
                     console.log("\n");
                     console.log(`It's currently: ${parsedWeather.currently.summary}`);
-                    console.log(`And how cold?: ${parsedWeather.currently.temperature} F.`);
+                    console.log(`And how cold?: ${Math.round(parsedWeather.currently.temperature)} F. / ${Math.round((parsedWeather.currently.temperature - 32) * 5 / 9)} C.`);
                 });
             });
         });
