@@ -18,8 +18,8 @@ So, you wan't the weather for Odense, Denmark, huh?
 Well, knock yourself out:
 
 
-It's currently: Light Rain
-And how cold?: 39.48 F.
+It's currently: Partly Cloudy
+And how cold?: 45 F. / 7 C.
 ```
 
 
