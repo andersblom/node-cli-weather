@@ -4,12 +4,12 @@ Because why look out the window, when you can keep staring into your console?
 
 ## Getting started: 
 ```
-node weather.js <your city here>
+node weather <your city here>
 ```
 
 ### Example:
 ```
-node weather.js Odense, Denmark
+node weather Odense, Denmark
 ```
 
 Will display (for now): 
